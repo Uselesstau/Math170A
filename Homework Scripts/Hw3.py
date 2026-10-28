@@ -34,18 +34,18 @@ for p in p_values:
 
     for N in N_values:
         max_val = np.max(Ax_norms[:N])
-        print(f"\nMax over first {N:<6} samples : {max_val:.6f}")
+        print(f"\nMax over first {N:<6} samples : {max_val}")
 
-    print(f"Library ||A||_{p_label:<14} : {lib_val:.6f}")
+    print(f"Library ||A||_{p_label} : {lib_val}")
 
 # Frobenius norm
 fro_norm = np.linalg.norm(A, ord='fro')
-print(f"\nLibrary ||A||_F: {fro_norm:.6f}\n")
+print(f"\nLibrary ||A||_F: {fro_norm}\n")
 
 # Verify exact calculations match the library 2-norm
 exact_val = np.sqrt((15 + np.sqrt(13)) / 2)
 lib_2_norm = np.linalg.norm(A, ord=2)
 
 print(f"\nA^T @ A: {A.transpose() @ A:}")
-print(f"\nCalculated sqrt((15+sqrt(13))/2): {exact_val:.6f}")
-print(f"\nLibrary ||A||_2: {lib_2_norm:.6f}")
+print(f"\nCalculated sqrt((15+sqrt(13))/2): {exact_val}")
+print(f"\nLibrary ||A||_2: {lib_2_norm}")
